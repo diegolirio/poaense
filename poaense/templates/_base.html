@@ -1,0 +1,125 @@
+<html>
+<head>
+	{% block head %}
+		<title>Campeonato</title>
+		<link href="/media/bootstrap/Cerulean/bootstrap.min.css" rel="stylesheet"/>
+		
+		<link href="/media/css/my_css.css" rel="stylesheet"/>
+		
+		<!--<script src="{{ MEDIA_URL }}bootstrap/bootstrap.min.js"/>-->
+		
+		<link href="/media/bootstrap/bootswatch.css" rel="stylesheet"> 
+		<link href="/media/bootstrap/bootstrap-responsive.min.css" rel="stylesheet"> 
+		<!--<link href="bootstrap/font-awesome.min.css" rel="stylesheet"> -->          	
+		
+		<script src="/media/bootstrap/jquery.min.js"></script>
+		<script src="/media/bootstrap/bootstrap.min.js"></script>
+		<script src="/media/bootstrap/bootswatch.js"></script>
+		<script src="/media/bootstrap/jquery.smooth-scroll.min.js"></script>
+		
+		<script type="text/javascript">				
+			function show__(url, alt, larg) {
+				w = window.open(url, 
+								'', 
+								'height=550, width=750, top=150, left=250, scrollbars=no, resizable=no');								
+			}
+			function show_ful__(url, alt, larg) {
+				w = window.open(url, 
+								'', 
+								'height=650, width=1170, top=100, left=30, scrollbars=no, resizable=no');								
+			}			
+			
+			function get_one_puclicidade_pagina(pagina_codigo, competicao_id) {
+				$.getJSON('/get_one_puclicidade_pagina/'+pagina_codigo+'/'+competicao_id+'/', 			
+						  function(retorno) {     
+							 //alert(retorno[0].fields.patrocinador_display);
+							 var html__ = "";
+							 html__ += '<span class="text-warning">publicidade</span><br/> ';
+							 if (retorno[0].fields.return_proc == 'N') {
+								html__ += '<a href="'+retorno[0].fields.patrocinador_link+'" target="_blank">';
+								html__ += '   <img class="img-rounded" title="'+retorno[0].fields.patrocinador_display+'" height="100" width="150" src="'+retorno[0].fields.patrocinador_image_aside+'"/>';
+								html__ += '</a>';
+							} else {
+								html__ += '   <img class="img-rounded" title="Anuncie aqui" height="100" width="150" src="/media/images/patrocinadores/anuncie.gif"/>';
+							}
+							 $('#id_publicidade_top').html(html__);
+				});			
+			}			
+			
+		</script>		
+	
+	{% endblock %}
+</head>
+<body>
+
+	 <div class="navbar navbar-fixed-top" > <!--navbar-inverse-->
+	   <div class="navbar-inner">
+		 <div class="container">
+		   <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			 <span class="icon-bar"></span>
+			 <span class="icon-bar"></span>
+			 <span class="icon-bar"></span>
+		   </a>
+		   <a class="brand" href="/"><img src="/media/images/soccer_ball_24.png"/></a>
+		   <div class="nav-collapse collapse" id="main-menu">
+			<ul class="nav" id="main-menu-left">
+				<li><a href="/classificacao/">classificacao</a></li>
+			</ul>
+			<ul class="nav pull-right" id="main-menu-right">
+			    <li><a href="/login/">Login</a></li> 
+			</ul>
+		   </div>
+		 </div>
+	   </div>
+	 </div>
+	 
+	 </br></br></br>
+	 
+	<div class="container" >
+		<header class="jumbotron" id="overview">
+		  <div class="row">
+			<div class="span6">
+				<h1><img src="/media/images/trofeu_100.png"/> Campeonato Poaense</h1>
+			</div>
+			<div class="span6">
+			  <div>
+				 <!--cadastre-se-->
+			  </div>
+			</div>
+		  </div>
+		  <div class="subnav">
+			<div class="container">
+				<!--
+				<ul class="nav nav-pills">
+					<li><a href="/classificacao/">Classificacao</a></li>
+				</ul>
+				-->
+			</div>
+		  </div>
+		</header>
+	</div>		 
+	
+	{% block body %}
+		<!-- Conteudo -->
+		<div class="container">
+			{% include template %}
+		</div>
+	{% endblock %}	
+	
+	<br/><br/><br/>
+	
+	<div class="text-center">
+		<center>
+		<span class="label label-important">asisco.com.br</span>
+		</center>
+	</div>
+
+	<footer>
+		<div class="container">
+			<!--<p>Base Bootstrap Twiiter</p>-->
+			<p class="text-info"><a href="http://www.asisco.com.br" target="_blank"><span class="text-info">Asisco</span></a> @ 2013</p>
+		</div>
+	</footer>
+	
+</body>
+</html>
