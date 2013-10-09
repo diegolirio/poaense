@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'poaense.views.home', name='home'),
 	url(r'^classificacao/$', 'core.views.classificacao', name='classificacao'),
+	url(r'^jogo_1/$', 'core.views.jogo_1', name='jogo_1'),
     # url(r'^poaense/', include('poaense.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
