@@ -1,6 +1,8 @@
 # Create your views here.
 from django.shortcuts import render_to_response
 from django.shortcuts import redirect
+from core.models import Acessos
+from datetime import datetime
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -12,7 +14,18 @@ def get_client_ip(request):
 
 def classificacao(request):
 	ip = get_client_ip(request)
-	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip})	
+	date = datetime.now().date()
+	if Acessos.objects.filter(ip=ip, date=date).count() == 0:
+		a = Acessos()
+		a.date = date
+		a.ip = ip
+		a.save()
+		print('new ip: ' + ip)
+	else:
+		print('ip: ja acessou ' + ip)
+	today_access = Acessos.objects.filter(date=date).count()
+	access = Acessos.objects.all().count()		
+	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'today_access': today_access, 'access': access,})	
 	
 def rodada_1(request):
 	return render_to_response('_base.html',{'template': 'rodada_1/rodada_1.html',})				

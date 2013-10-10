@@ -36,3 +36,10 @@ class GolsJogo(models.Model):
 	jogador = models.ForeignKey(Jogador)
 	quantidade_gols = models.IntegerField(default=0)
 	jogo = models.ForeignKey(Jogo)
+	
+class Acessos(models.Model):
+	ip = models.CharField(max_length=50)
+	data_hora = models.DateTimeField(default=datetime.now)
+	date = models.DateField()
+	def __unicode__(self):
+		return 'IP: ' + self.ip + ' | ' + self.data_hora.strftime("%d/%m/%Y %H:%M") #+ ' | ' + self.data.strftime("%d/%m/%Y")
