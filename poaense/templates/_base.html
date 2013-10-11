@@ -3,7 +3,7 @@
 	{% block head %}
 		<title>Campeonato</title>
 		<link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
-		<link href="/media/bootstrap/Flatly/bootstrap.min.css" rel="stylesheet"/>
+		<link href="/media/bootstrap/Asisco/bootstrap.min.css" rel="stylesheet"/>
 		
 		<link href="/media/css/my_css.css" rel="stylesheet"/>
 		
@@ -72,38 +72,73 @@
 		   </div>
 		 </div>
 	   </div>
-	 </div>
-	 
-	 </br></br></br>
-	 
-	<div class="container" >
+	 </div>	 
+	
 		<header class="jumbotron" id="overview">
 		  <div class="row">
-			<div class="span9">
-				<h3 class="hidden-phone"><img src="/media/images/trofeu_100.png"/><span class="text-warning">Campeonato </span><span style="font-size: 50; font-family: 'Alex Brush', cursive;"> QuartaShow.com</span></h3>
-				<h4 class="visible-phone"><center><img src="/media/images/trofeu_100.png"/><br/><span class="text-warning">Campeonato </span><span style="font-family: 'Alex Brush', cursive;">QuartaShow.com</span></center></h4>
-			</div>
+		  
+			    <div class="container" >		
+					
+					<div class="span hidden-phone">
+						<img src="/media/images/trofeu_100.png"/>
+					</div>
+					<div class="span9 hidden-phone">
+						<h4><span >Campeonato </h4></span><h1 style="font-family: 'Alex Brush', cursive;"> Quarta<span class="text-warning">Show</span>.com</h1>
+					</div>
+					<h4 class="visible-phone"><img src="/media/images/trofeu_100.png"/><br/><span >Campeonato </span><span style="font-family: 'Alex Brush', cursive;">QuartaShow.com</span></h4>
+			    </div>
 			<div class="span3">
 			  <div>
-				 <!--cadastre-se-->
+				 <!--cadastre-se-->				 
 			  </div>
 			</div>
 		  </div>
-		  <div class="subnav">
-			<div class="container">
+		  <div class="row">	  
+		      <span class="pull-right"> {{access}} </span>
+			  <!--
+			  <div class="subnav">
+				<div class="container">
+					
 				
-				<span class="pull-right"> {{access}} </span>
-				<!--
-				<ul class="nav nav-pills">
-					<li><a href="/classificacao/">Classificacao</a></li>
-					<center><li>Meu IP: {{ ip }}</li></center>
-				</ul>
-				-->
-				
-			</div>
+					
+					<span class="pull-right"> {{access}} </span>
+					<!--
+					<ul class="nav nav-pills">
+						<li><a href="/classificacao/">Classificacao</a></li>
+						<center><li>Meu IP: {{ ip }}</li></center>
+					</ul>
+					--
+					
+				</div>
+			  </div>
+			  -->
+		  </div>
+		  <div class="row">
+		     <div class="container" >
+					<div class="colums_box no_bg colums_box_4">          
+						<a class="colbox" href="/classificacao/"> 
+							<img src="/media/images/spacer.gif" width="98" height="98"  /><h4>Classificacao</h4>
+						</a>           
+					</div>
+            
+				  <div class="colums_box no_bg colums_box_2"> 
+					
+					<a class="colbox" href="/rodada_1/"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4>Jogos</h4></a>    
+									
+				  </div>
+				  
+				   <div class="colums_box no_bg colums_box_3"> 					  
+					<a class="colbox" href="#/artilharia_modal/"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4>Artilharia</h4>	</a>    							
+				  </div>
+				  
+				  <div class="colums_box no_bg colums_box_1 last">               
+					<a class="colbox" href="#/Times/"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4>Times</h4>
+					</a>         
+				  </div>	
+			 </div>		 
 		  </div>
 		</header>
-	</div>		 
+	
 	
 	{% block body %}
 		<!-- Conteudo -->
@@ -113,7 +148,6 @@
 	{% endblock %}	
 	
 
-	<br/><br/><br/>
 	<br/><br/><br/>
 	<br/><br/><br/>
 	
