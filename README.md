@@ -1,5 +1,6 @@
 -- Inclusão
 
 - Add Jogo abaixo da classificação
-- Jogo_? modal >> tabela_jogo_?
-- rodada_1/phone_jogo_1/
+- add pasta de nova rodada_?
+- Artilharia
+- Modal dos times baseado na classificacao.
