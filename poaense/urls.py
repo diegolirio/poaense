@@ -8,10 +8,12 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'poaense.views.home', name='home'),
-	url(r'^classificacao/$', 'core.views.classificacao', name='classificacao'),
+	url(r'^classificacao/(?P<view>\d+)$', 'core.views.classificacao', name='classificacao'),
 	url(r'^jogos/$', 'core.views.jogos', name='jogos'),
-	url(r'^rodada_1/phone_jogo_1/$', 'core.views.phone_jogo_1', name='phone_jogo_1'),
-	url(r'^rodada_1/phone_jogo_2/$', 'core.views.phone_jogo_2', name='phone_jogo_2'),
+	
+	#url(r'^rodada_1/phone_jogo_1/$', 'core.views.phone_jogo_1', name='phone_jogo_1'),
+	#url(r'^rodada_1/phone_jogo_2/$', 'core.views.phone_jogo_2', name='phone_jogo_2'),
+	
     # url(r'^poaense/', include('poaense.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

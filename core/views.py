@@ -11,8 +11,8 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
-
-def classificacao(request):
+	
+def classificacao(request, view=0):
 	ip = get_client_ip(request)
 	date = datetime.now().date()
 	#if Acessos.objects.filter(ip=ip, date=date).count() == 0:
@@ -25,7 +25,7 @@ def classificacao(request):
 	#	print('ip: ja acessou ' + ip)
 	today_access = Acessos.objects.filter(date=date).count()
 	access = Acessos.objects.all().count()		
-	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'today_access': today_access, 'access': access,})	
+	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'today_access': today_access, 'access': access, 'view': view})	
 	
 def jogos(request):
 	return render_to_response('_base.html',{'template': 'jogos.html',})				
