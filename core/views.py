@@ -27,8 +27,8 @@ def classificacao(request):
 	access = Acessos.objects.all().count()		
 	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'today_access': today_access, 'access': access,})	
 	
-def rodada_1(request):
-	return render_to_response('_base.html',{'template': 'rodada_1/rodada_1.html',})				
+def jogos(request):
+	return render_to_response('_base.html',{'template': 'jogos.html',})				
 	
 def phone_jogo_1(request):
 	return render_to_response('_base.html',{'template': 'rodada_1/phone_jogo_1.html',})			
