@@ -36,8 +36,8 @@ def classificacao(request, view=0):
 		a.save()
 		if AccessCount.objects.all().count() > 0:
 			ac = AccessCount.objects.all()[0:1].get()
-			ac.today_count = ac.today_count+1
-			ac.count = ac.count+1
+			ac.today_count = Acessos.objects.filter(date=date).count()
+			ac.count = Acessos.objects.all().count()
 			ac.save()
 		else:
 			ac = AccessCount()
