@@ -43,3 +43,9 @@ class Acessos(models.Model):
 	date = models.DateField()
 	def __unicode__(self):
 		return 'IP: ' + self.ip + ' | ' + self.data_hora.strftime("%d/%m/%Y %H:%M") #+ ' | ' + self.data.strftime("%d/%m/%Y")
+		
+class AccessCount(models.Model):
+	today_count = models.IntegerField() 
+	count = models.IntegerField()
+	def __unicode__(self):
+		return 'Hoje: ' + str(today_count) + ' - Total: ' + str(count)
