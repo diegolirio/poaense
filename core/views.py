@@ -9,8 +9,15 @@ def get_client_ip(request):
     #if x_forwarded_for:
     #    ip = x_forwarded_for.split(',')[-1].strip()
     #else:
-    ip = request.META.get('REMOTE_ADDR')
-    return ip
+		#ip = request.META.get('REMOTE_ADDR')
+	from BeautifulSoup import BeautifulSoup
+	import urllib2
+	pub_ip = urllib2.urlopen('http://meuip.datahouse.com.br/').read() #abre site
+	soup = BeautifulSoup(pub_ip) #armazena o conteudo em html
+	ips = soup.findAll('title') #procura por tags
+	for ip in ips:
+		ipexterno = str(ip)
+    return ipexterno[41:54]
 	
 def classificacao(request, view=0):
 	ip = get_client_ip(request)
