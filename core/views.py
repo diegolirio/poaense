@@ -25,7 +25,7 @@ def get_local(ip):
 	
 def classificacao(request, view=0):
 	ip = get_client_ip(request)
-	local = get_local(ip)
+	#local = get_local(ip)
 	date = datetime.now().date()
 	today_access = 0 #Acessos.objects.filter(date=date).count()
 	access = 0 #Acessos.objects.all().count()		
@@ -53,7 +53,7 @@ def classificacao(request, view=0):
 			ac = AccessCount.objects.all()[0:1].get()
 			today_access = ac.today_count
 			access = ac.count				
-	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'local': local, 'today_access': today_access, 'access': access, 'view': view})	
+	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'local': '', 'today_access': today_access, 'access': access, 'view': view})	
 	
 def jogos(request):
 	return render_to_response('_base.html',{'template': 'jogos.html',})				
