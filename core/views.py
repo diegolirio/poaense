@@ -15,14 +15,14 @@ def get_client_ip(request):
 def classificacao(request, view=0):
 	ip = get_client_ip(request)
 	date = datetime.now().date()
-	#if Acessos.objects.filter(ip=ip, date=date).count() == 0:
-	a = Acessos()
-	a.date = date
-	a.ip = ip
-	a.save()
-	#	print('new ip: ' + ip)
-	#else:
-	#	print('ip: ja acessou ' + ip)
+	if Acessos.objects.filter(ip=ip, date=date).count() == 0:
+		a = Acessos()
+		a.date = date
+		a.ip = ip
+		a.save()
+		#	print('new ip: ' + ip)
+	else:
+		print('ip: ja acessou ' + ip)
 	today_access = Acessos.objects.filter(date=date).count()
 	access = Acessos.objects.all().count()		
 	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'today_access': today_access, 'access': access, 'view': view})	
