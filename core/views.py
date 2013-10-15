@@ -12,9 +12,20 @@ def get_client_ip(request):
     else:
 		ip = request.META.get('REMOTE_ADDR')
     return ip
+
+def get_local(ip):
+	from django.contrib.gis.utils import GeoIP
+	g = GeoIP()
+	ip = request.META.get('REMOTE_ADDR', None)
+	if ip:
+		city = g.city(ip)['city']
+	else:
+		city = 'Sao Paulo' # default city	
+	return city
 	
 def classificacao(request, view=0):
 	ip = get_client_ip(request)
+	local = get_local(ip)
 	date = datetime.now().date()
 	today_access = 0 #Acessos.objects.filter(date=date).count()
 	access = 0 #Acessos.objects.all().count()		
@@ -42,7 +53,7 @@ def classificacao(request, view=0):
 			ac = AccessCount.objects.all()[0:1].get()
 			today_access = ac.today_count
 			access = ac.count				
-	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'today_access': today_access, 'access': access, 'view': view})	
+	return render_to_response('_base.html',{'template': 'classificacao.html', 'ip': ip, 'local': local, 'today_access': today_access, 'access': access, 'view': view})	
 	
 def jogos(request):
 	return render_to_response('_base.html',{'template': 'jogos.html',})				
