@@ -18,6 +18,20 @@
 		<script src="/media/bootstrap/bootswatch.js"></script>
 		<script src="/media/bootstrap/jquery.smooth-scroll.min.js"></script>
 		
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript">				
+			   function get_options() {
+					var options = {'title':'1 Jogos',
+					   'width':290,
+					   'height':200,
+					   is3D: true
+					   };
+					  return options;
+			   }	
+	    </script>
+		
+		
+		
 		<script type="text/javascript">				
 			function show__(url, alt, larg) {
 				w = window.open(url, 
@@ -118,20 +132,20 @@
 		     <div class="container" >
 					<div class="colums_box no_bg colums_box_4">          
 						<a class="colbox" href="/classificacao/0#id_classificacao"> 
-							<img src="/media/images/spacer.gif" width="98" height="98"  /><h4>Classifica&ccedil;&atilde;o</h4>
+							<img src="/media/images/spacer.gif" width="98" height="98"  /><h4 class="text-warning">Classifica&ccedil;&atilde;o</h4>
 						</a>           
 					</div>
             
 				  <div class="colums_box no_bg colums_box_2"> 					
-					<a class="colbox" href="/jogos/"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4>Jogos</h4></a>   
+					<a class="colbox" href="/jogos/"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4 class="text-warning">Jogos</h4></a>   
 				  </div>
 				  
 				   <div class="colums_box no_bg colums_box_3"> 					  
-					<a class="colbox" href="/classificacao/2#id_classificacao"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4>Artilharia</h4>	</a>    							
+					<a class="colbox" href="/classificacao/2#id_classificacao"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4 class="text-warning">Artilharia</h4>	</a>    							
 				  </div>
 				  
 				  <div class="colums_box no_bg colums_box_1 last">               
-					<a class="colbox" href="#/Times/"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4>Times</h4>
+					<a class="colbox" href="/times/#id_times"> <img src="/media/images/spacer.gif" width="98" height="98"  /><h4 class="text-warning">Times</h4>
 					</a>         
 				  </div>	
 			 </div>		 
@@ -153,7 +167,6 @@
 	<div class="text-center">
 		<center>
 		<!--<span class="label label-important">asisco.com.br</span>-->
-			<span > Meu IP: {{ ip }} <br/> {{ local }}</span>
 		</center>
 	</div>
 

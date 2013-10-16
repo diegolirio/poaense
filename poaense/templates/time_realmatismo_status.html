@@ -1,0 +1,43 @@
+				<div class="span3">
+					<table class="table table-striped table-hover well">
+						<tr ><td ><img src="/media/images/golerio_24x24.png"/> D&uacute;du</td><td></td></tr> <!-- Dudu -->
+						<tr ><td ><img src="/media/images/chuteira_32.png"/> D&uacute; Engenheiro</td><td></td></tr>
+						<tr ><td ><img src="/media/images/chuteira_32.png"/> Boy</td><td></td></tr>
+						<tr ><td ><img src="/media/images/chuteira_32.png"/> Rodrigo</td><td></td></tr>
+						<tr ><td><img src="/media/images/chuteira_32.png"/> Nicolas</td><td ><img src="/media/images/soccer_ball_16.png"/> 2</td></tr>
+						<tr ><td><img src="/media/images/chuteira_32.png"/> D&uacute; Magrelo</td><td ><img src="/media/images/soccer_ball_16.png"/> 2</td></tr>
+						<tr ><td><img src="/media/images/chuteira_32.png"/> Eskilo</td><td></td></tr>
+						<tr ><td><img src="/media/images/chuteira_32.png"/> Jairo</td><td></td></tr>
+						<tr ><td><img src="/media/images/chuteira_32.png"/> Denis</td><td ><img src="/media/images/soccer_ball_16.png"/> 2</td></tr>
+					</table>	
+				</div>
+				<div class="span3">
+						<script type="text/javascript">
+						  google.load('visualization', '1.0', {'packages':['corechart']});
+						  google.setOnLoadCallback(drawChart_pizza_tahiti);
+						  function drawChart_pizza_tahiti() {
+							var data = new google.visualization.DataTable();
+							data.addColumn('string', 'Criterios de Acertos');
+							data.addColumn('number', 'Quantidade');
+							data.addRows([
+							  ['Vitorias', 0], 
+							  ['Empates', 0], 
+							  ['Derrotas', 1]
+							]);
+							// Set chart options
+							var options = get_options();
+							// Instantiate and draw our chart, passing in some options.
+							var chart = new google.visualization.PieChart(document.getElementById('id_pizza_real'));
+							chart.draw(data, options);
+						  }
+						</script>
+					<center>	
+						<p >&bull; 3&deg; Colocado</p> 
+						<p>&bull; 0 pontos</p>
+						<p>&bull; 6 Gols pr&oacute;</p>
+						<p>&bull; 8 Gols contra</p>
+						<p>&bull; -2 Saldo de gols</p>
+						<p>&bull; 0% de aproveitamento</p>						
+						<div id="id_pizza_real"></div>
+					</center>			
+				</div>				

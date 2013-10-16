@@ -57,9 +57,19 @@ def classificacao(request, view=0):
 	
 def jogos(request):
 	return render_to_response('_base.html',{'template': 'jogos.html',})				
-	
-def phone_jogo_1(request):
-	return render_to_response('_base.html',{'template': 'rodada_1/phone_jogo_1.html',})			
 
-def phone_jogo_2(request):
-	return render_to_response('_base.html',{'template': 'rodada_1/phone_jogo_2.html',})	
+def times(request):
+	return render_to_response('_base.html',{'template': 'times.html',})
+
+	
+def tahiti(request):
+	return render_to_response('_base.html',{'template': 'time_tahiti.html',})			
+
+def ostreze(request):
+	return render_to_response('_base.html',{'template': 'time_ostreze.html',})			
+
+def artcar(request):
+	return render_to_response('_base.html',{'template': 'time_artcar.html',})			
+	
+def realmatismo(request):
+	return render_to_response('_base.html',{'template': 'time_realmatismo.html',})
