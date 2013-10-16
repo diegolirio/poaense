@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 	url(r'^classificacao/(?P<view>\d+)$', 'core.views.classificacao', name='classificacao'),
 	url(r'^jogos/$', 'core.views.jogos', name='jogos'),
 	url(r'^times/$', 'core.views.times', name='times'),
+	url(r'^print/$', 'core.views.print_', name='print_'),
 	
 	url(r'^tahiti/$', 'core.views.tahiti', name='tahiti'),
 	url(r'^os_treze/$', 'core.views.ostreze', name='ostreze'),

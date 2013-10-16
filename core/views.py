@@ -60,6 +60,9 @@ def jogos(request):
 
 def times(request):
 	return render_to_response('_base.html',{'template': 'times.html',})
+	
+def print_(request):
+	return render_to_response('_base_simple.html',{'template': 'print.html',})	
 
 	
 def tahiti(request):
