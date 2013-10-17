@@ -13,13 +13,12 @@ urlpatterns = patterns('',
 	url(r'^times/$', 'core.views.times', name='times'),
 	url(r'^print/$', 'core.views.print_', name='print_'),
 	
+	url(r'^patrocinadores/$', 'core.views.patrocinadores', name='patrocinadores'),
+	
 	url(r'^tahiti/$', 'core.views.tahiti', name='tahiti'),
 	url(r'^os_treze/$', 'core.views.ostreze', name='ostreze'),
 	url(r'^art_car/$', 'core.views.artcar', name='artcar'),
 	url(r'^real_matismo/$', 'core.views.realmatismo', name='realmatismo'),
-	
-	#url(r'^rodada_1/phone_jogo_1/$', 'core.views.phone_jogo_1', name='phone_jogo_1'),
-	#url(r'^rodada_1/phone_jogo_2/$', 'core.views.phone_jogo_2', name='phone_jogo_2'),
 	
     # url(r'^poaense/', include('poaense.foo.urls')),
 

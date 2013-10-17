@@ -64,6 +64,8 @@ def times(request):
 def print_(request):
 	return render_to_response('_base_simple.html',{'template': 'print.html',})	
 
+def patrocinadores(request):
+	return render_to_response('_base.html',{'template': 'patrocinadores.html',})	
 	
 def tahiti(request):
 	return render_to_response('_base.html',{'template': 'time_tahiti.html',})			
