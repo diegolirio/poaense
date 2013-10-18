@@ -15,30 +15,40 @@
 				<div class="span3">
 						<script type="text/javascript">
 						  google.load('visualization', '1.0', {'packages':['corechart']});
-						  google.setOnLoadCallback(drawChart_pizza_tahiti);
-						  function drawChart_pizza_tahiti() {
+						  google.setOnLoadCallback(drawChart_pizza);
+						  function drawChart_pizza() {
+						  
+						    var classificacao = getRealMatismo();
+						    $('#id_det_view_real_matismo').html(get_det_view(classificacao));
+							
 							var data = new google.visualization.DataTable();
 							data.addColumn('string', 'Criterios de Acertos');
 							data.addColumn('number', 'Quantidade');
 							data.addRows([
-							  ['Vitorias', 0], 
-							  ['Empates', 0], 
-							  ['Derrotas', 2]
+							  ['Vitorias', classificacao.getVitorias()], 
+							  ['Empates', classificacao.getEmpates()], 
+							  ['Derrotas', classificacao.getDerrotas()]
 							]);
 							// Set chart options
 							var options = get_options();
 							// Instantiate and draw our chart, passing in some options.
-							var chart = new google.visualization.PieChart(document.getElementById('id_pizza_real'));
+							var chart = new google.visualization.PieChart(document.getElementById('id_pizza_real_matismo'));
 							chart.draw(data, options);
 						  }
-						</script>
+						  
+						</script>		
+												
 					<center>	
-						<p >&bull; 3&deg; Colocado</p> 
-						<p>&bull; 0 pontos</p>
-						<p>&bull; 9 Gols pr&oacute;</p>
-						<p>&bull; 12 Gols contra</p>
-						<p>&bull; -3 Saldo de gols</p>
-						<p>&bull; 0% de aproveitamento</p>						
-						<div id="id_pizza_real"></div>
-					</center>			
-				</div>				
+						<div id="id_det_view_real_matismo">
+							<!--
+							<p >&bull; 1&deg; Colocado</p> 
+							<p>&bull; 6 pontos</p>
+							<p>&bull; 12 Gols pr&oacute;</p>
+							<p>&bull; 4 Gols contra</p>
+							<p>&bull; 8 Saldo de gols</p>
+							<p>&bull; 100% de aproveitamento</p>						
+							-->
+						</div>
+						<div id="id_pizza_real_matismo"></div>
+					</center>	
+				</div>		

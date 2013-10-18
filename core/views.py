@@ -71,10 +71,10 @@ def tahiti(request):
 	return render_to_response('_base.html',{'template': 'time_tahiti.html',})			
 
 def ostreze(request):
-	return render_to_response('_base.html',{'template': 'time_ostreze.html',})			
+	return render_to_response('_base.html',{'template': 'time_os_treze.html',})			
 
 def artcar(request):
-	return render_to_response('_base.html',{'template': 'time_artcar.html',})			
+	return render_to_response('_base.html',{'template': 'time_art_car.html',})			
 	
 def realmatismo(request):
-	return render_to_response('_base.html',{'template': 'time_realmatismo.html',})
+	return render_to_response('_base.html',{'template': 'time_real_matismo.html',})

@@ -14,34 +14,44 @@
 						<tr ><td><img src="/media/images/chuteira_32.png"/> <img src="/media/images/e_24.png" title="Gols de jogadores Emprestado para o Art Car"/></td><td><img src="/media/images/soccer_ball_16.png"/> 4</td></tr>
 					</table>
 				</div>
+	
 				<div class="span3">
 						<script type="text/javascript">
 						  google.load('visualization', '1.0', {'packages':['corechart']});
-						  google.setOnLoadCallback(drawChart_pizza_tahiti);
-						  function drawChart_pizza_tahiti() {
+						  google.setOnLoadCallback(drawChart_pizza);
+						  function drawChart_pizza() {
+						  
+						    var classificacao = getArtCar();
+						    $('#id_det_view_art_car').html(get_det_view(classificacao));
+							
 							var data = new google.visualization.DataTable();
 							data.addColumn('string', 'Criterios de Acertos');
 							data.addColumn('number', 'Quantidade');
 							data.addRows([
-							  ['Vitorias', 0], 
-							  ['Empates', 0], 
-							  ['Derrotas', 2]
+							  ['Vitorias', classificacao.getVitorias()], 
+							  ['Empates', classificacao.getEmpates()], 
+							  ['Derrotas', classificacao.getDerrotas()]
 							]);
 							// Set chart options
 							var options = get_options();
 							// Instantiate and draw our chart, passing in some options.
-							var chart = new google.visualization.PieChart(document.getElementById('id_pizza_art'));
+							var chart = new google.visualization.PieChart(document.getElementById('id_pizza_art_car'));
 							chart.draw(data, options);
 						  }
-						</script>			
-						
+						  
+						</script>		
+												
 					<center>	
-						<p >&bull; 4&deg; Colocado</p> 
-						<p>&bull; 0 pontos</p>
-						<p>&bull; 6 Gols pr&oacute;</p>
-						<p>&bull; 14 Gols contra</p>
-						<p>&bull; -8 Saldo de gols</p>
-						<p>&bull; 0% de aproveitamento</p>						
-						<div id="id_pizza_art"></div>
+						<div id="id_det_view_art_car">
+							<!--
+							<p >&bull; 1&deg; Colocado</p> 
+							<p>&bull; 6 pontos</p>
+							<p>&bull; 12 Gols pr&oacute;</p>
+							<p>&bull; 4 Gols contra</p>
+							<p>&bull; 8 Saldo de gols</p>
+							<p>&bull; 100% de aproveitamento</p>						
+							-->
+						</div>
+						<div id="id_pizza_art_car"></div>
 					</center>	
-				</div>					
+				</div>	

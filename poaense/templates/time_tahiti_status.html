@@ -14,36 +14,43 @@
 			<tr><td ><img src="/media/images/chuteira_32.png"/> Marcelo Vargas</td><td ><img src="/media/images/soccer_ball_16.png"/> 2</td></tr>
 		</table>	
 	</div>	
-	<div class="span3">
-			
-			<script type="text/javascript">
-			
-			  google.load('visualization', '1.0', {'packages':['corechart']});
-			  google.setOnLoadCallback(drawChart_pizza_tahiti);
-			  function drawChart_pizza_tahiti() {
-				var data = new google.visualization.DataTable();
-				data.addColumn('string', 'Criterios de Acertos');
-				data.addColumn('number', 'Quantidade');
-				data.addRows([
-				  ['Vitorias', 2], 
-				  ['Empates', 0], 
-				  ['Derrotas', 0]
-				]);
-				// Set chart options
-				var options = get_options();
-				// Instantiate and draw our chart, passing in some options.
-				var chart = new google.visualization.PieChart(document.getElementById('id_pizza_tahiti'));
-				chart.draw(data, options);
-			  }
-			</script>	
-		<center>		
-			<p >&bull; 2&deg; Colocado</p> 
-			<p>&bull; 6 pontos</p>
-			<p>&bull; 14 Gols pr&oacute;</p>
-			<p>&bull; 11 Gols contra</p>
-			<p>&bull; 3 Saldo de gols</p>
-			<p>&bull; 100% de aproveitamento</p>	
-			<div id="id_pizza_tahiti"></div>
-		</center>					
-		
-	</div>
+				<div class="span3">
+						<script type="text/javascript">
+						  google.load('visualization', '1.0', {'packages':['corechart']});
+						  google.setOnLoadCallback(drawChart_pizza);
+						  function drawChart_pizza() {
+						  
+						    var classificacao = getTahiti();
+						    $('#id_det_view_tahiti').html(get_det_view(classificacao));
+							
+							var data = new google.visualization.DataTable();
+							data.addColumn('string', 'Criterios de Acertos');
+							data.addColumn('number', 'Quantidade');
+							data.addRows([
+							  ['Vitorias', classificacao.getVitorias()], 
+							  ['Empates', classificacao.getEmpates()], 
+							  ['Derrotas', classificacao.getDerrotas()]
+							]);
+							// Set chart options
+							var options = get_options();
+							// Instantiate and draw our chart, passing in some options.
+							var chart = new google.visualization.PieChart(document.getElementById('id_pizza_tahiti'));
+							chart.draw(data, options);
+						  }
+						  
+						</script>		
+												
+					<center>	
+						<div id="id_det_view_tahiti">
+							<!--
+							<p >&bull; 1&deg; Colocado</p> 
+							<p>&bull; 6 pontos</p>
+							<p>&bull; 12 Gols pr&oacute;</p>
+							<p>&bull; 4 Gols contra</p>
+							<p>&bull; 8 Saldo de gols</p>
+							<p>&bull; 100% de aproveitamento</p>						
+							-->
+						</div>
+						<div id="id_pizza_tahiti"></div>
+					</center>	
+				</div>	

@@ -16,15 +16,19 @@
 				<div class="span3">
 						<script type="text/javascript">
 						  google.load('visualization', '1.0', {'packages':['corechart']});
-						  google.setOnLoadCallback(drawChart_pizza_tahiti);
-						  function drawChart_pizza_tahiti() {
+						  google.setOnLoadCallback(drawChart_pizza);
+						  function drawChart_pizza() {
+						  
+						    var classificacao = getOsTrese();
+						    $('#id_det_view_os_treze').html(get_det_view(classificacao));
+							
 							var data = new google.visualization.DataTable();
 							data.addColumn('string', 'Criterios de Acertos');
 							data.addColumn('number', 'Quantidade');
 							data.addRows([
-							  ['Vitorias', 2], 
-							  ['Empates', 0], 
-							  ['Derrotas', 0]
+							  ['Vitorias', classificacao.getVitorias()], 
+							  ['Empates', classificacao.getEmpates()], 
+							  ['Derrotas', classificacao.getDerrotas()]
 							]);
 							// Set chart options
 							var options = get_options();
@@ -32,15 +36,20 @@
 							var chart = new google.visualization.PieChart(document.getElementById('id_pizza_treze'));
 							chart.draw(data, options);
 						  }
+						  
 						</script>		
 												
 					<center>	
-						<p >&bull; 1&deg; Colocado</p> 
-						<p>&bull; 6 pontos</p>
-						<p>&bull; 12 Gols pr&oacute;</p>
-						<p>&bull; 4 Gols contra</p>
-						<p>&bull; 8 Saldo de gols</p>
-						<p>&bull; 100% de aproveitamento</p>						
+						<div id="id_det_view_os_treze">
+							<!--
+							<p >&bull; 1&deg; Colocado</p> 
+							<p>&bull; 6 pontos</p>
+							<p>&bull; 12 Gols pr&oacute;</p>
+							<p>&bull; 4 Gols contra</p>
+							<p>&bull; 8 Saldo de gols</p>
+							<p>&bull; 100% de aproveitamento</p>						
+							-->
+						</div>
 						<div id="id_pizza_treze"></div>
 					</center>	
 				</div>					
