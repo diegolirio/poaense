@@ -87,6 +87,33 @@ function Classificacao(){
     }; 		
 }
 
+function Jogador() {
+	var nome;
+	var time;
+	var gols;
+	
+	this.time  = new Time();	
+	
+	var getNome = function() {
+		return this.nome;
+	}
+	var setNome = function(nome_) {
+		this.nome = nome_;
+	}
+	var getTime = function() {
+		return this.time;
+	}
+	var setTime = function(time_) {
+		this.time = time_;
+	}	
+	var getGols = function() {
+		return this.gols;
+	}
+	var setGols = function(gols_) {
+		this.gols_ = gols_;
+	}	
+}
+
 function qtde_jogos() {
 	return 2;
 }
@@ -128,7 +155,12 @@ function get_det_view(classificacao) {
 	return html_;
 }
 
+
+
+
+/* ====================================================*/
 /* ==================== ALTERA TIMES ==================*/
+/* ====================================================*/
 function get_table_classificacao() {
 
 	var tahiti_class = getTahiti();		
@@ -199,7 +231,39 @@ function getRealMatismo() {
 	time.setGolsContra(12);
 	return time;
 }
+
+
+
+// artilharia....
+function getNeguinho() {
+	var j = new Jogador();
+	j.setNome("Neguinho");
+	j.getTime().setTime("Os Treze");
+	j.setGols(5);
+	return j;
+}
+
+function getBruno() {
+	var j = new Jogador();
+	j.setNome("Bruno");
+	j.getTime().setTime("Tahiti");
+	j.setGols(5);
+	return j;
+}
+
+function getBruno() {
+	var j = new Jogador();
+	j.setNome("Bruno");
+	j.getTime().setTime("Tahiti");
+	j.setGols(5);
+	return j;
+}
+/* ====================================================*/
 /* ==================== fim ALTERA TIMES ==================*/
+/* ====================================================*/
+
+
+
 
 $(function() {
 	$('#id_tbdoy_class').html(get_table_classificacao());
