@@ -143,7 +143,7 @@ function get_table_row_html(classificacao) {
 	var time_id = classificacao.getTime().getNome().toLowerCase().replace(" ","_");
 	var html = '';	
 	html +='<tr style="font-size:20px;">';
-	html +=      '<td class="text-info">'+classificacao.getColocacao()+'º</td>';
+	html +=      '<td class="text-info">'+classificacao.getColocacao()+'&deg;</td>';
 	html += 	 '<td>';
 	if (window.location.toString().indexOf("print") > -1) {
 		html +=        classificacao.getTime().getNome();
