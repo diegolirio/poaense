@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import os
+import dj_database_url
+from unipath import Path
+PROJECT_DIR = Path(__file__).parent
 
 ROOT_PROJECT = os.path.dirname(__file__)
 
