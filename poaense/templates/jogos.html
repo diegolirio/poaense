@@ -1,25 +1,68 @@
+<script type="text/javascript">	
+	
+	$(function() {
+		var patrocinio_1 = get_patrocinio();
+		$('#id_patrocinador_1 a img').attr('src', patrocinio_1.getImagem());
+		$('#id_patrocinador_1 a img').attr('title', patrocinio_1.getTitle());
+		$('#id_patrocinador_1 a').attr('href', patrocinio_1.getUrl());		
+	
+		var patrocinio_2 = get_patrocinio();
+		$('#id_patrocinador_2 a img').attr('src', patrocinio_2.getImagem());
+		$('#id_patrocinador_2 a img').attr('title', patrocinio_2.getTitle());
+		$('#id_patrocinador_2 a').attr('href', patrocinio_2.getUrl());	
+
+		var patrocinio_3 = get_patrocinio();
+		$('#id_patrocinador_3 a img').attr('src', patrocinio_3.getImagem());
+		$('#id_patrocinador_3 a img').attr('title', patrocinio_3.getTitle());
+		$('#id_patrocinador_3 a').attr('href', patrocinio_3.getUrl());	
+/*
+		var patrocinio_4 = get_patrocinio();
+		$('#id_patrocinador_4 a img').attr('src', patrocinio_4.getImagem());
+		$('#id_patrocinador_4 a img').attr('title', patrocinio_4.getTitle());
+		$('#id_patrocinador_4 a').attr('href', patrocinio_4.getUrl());		
+*/		
+	});	
+</script>	
+
 <div class="pull-right">
 	<br/>
 	<p class="text-warning">patrocinador</p>
-	<a href="http://www.cafglass.com.br" target="_blank">
-		<img class="img-rounded" title="CafGlass" height="120" width="110" src="/media/images/patrocinadores/cafglass_150_altura.gif">
-	</a>
+	<div id="id_patrocinador_1">
+		<a href="http://www.cafglass.com.br" target="_blank">
+			<img class="img-rounded" title="CafGlass" height="120" width="110" src="/media/images/load_32.gif">
+		</a>
+	</div>
 </div>	
-
-<br/><br/>									
+							
+<br/><br/>							
 
 {% include 'rodada_1/rodada_1.html' %}
 <hr/>
+<div class="pull-right">
+	<br/>
+	<p class="text-warning">patrocinador</p>
+	<div id="id_patrocinador_2">
+		<a href="http://www.cafglass.com.br" target="_blank">
+			<img class="img-rounded" title="CafGlass" height="120" width="110" src="/media/images/load_32.gif">
+		</a>
+	</div>
+</div>	
+							
+<br/>	
+
 {% include 'rodada_2/rodada_2.html' %}
 <hr/>
 
 <div class="pull-right">
 	<br/>
 	<p class="text-warning">patrocinador</p>
-	<a href="http://www.oldcity.com.br" target="_blank">
-		<img class="img-rounded" title="Old City" height="130" width="130" src="/media/images/patrocinadores/oldcity.jpg">
-	</a>
+	<div id="id_patrocinador_3">
+		<a href="http://www.oldcity.com.br" target="_blank">
+			<img class="img-rounded" title="Old City" height="120" width="110" src="/media/images/load_32.gif">
+		</a>
+	</div>
 </div>	
-<br/><br/>					
+
+<br/>				
 
 {% include 'rodada_3/rodada_3.html' %}
