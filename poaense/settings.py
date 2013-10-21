@@ -1,4 +1,6 @@
 # Django settings for poaense project.
+# -*- coding: utf-8 -*-
+
 import os
 
 ROOT_PROJECT = os.path.dirname(__file__)
@@ -7,11 +9,12 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    (u'Diego Lírio', 'diegolirio.dl@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -23,6 +26,12 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
+"""
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default='sqlite:///' + PROJECT_DIR.child('campeonato.db'))
+}
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -32,11 +41,11 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Sao_Paulo'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-BR'
 
 SITE_ID = 1
 
