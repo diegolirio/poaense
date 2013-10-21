@@ -478,10 +478,118 @@ function getAndy() {
 /* ==================== fim ALTERA TIMES ==================*/
 /* ====================================================*/
 
-
 $(function() {
 	$('#id_tbdoy_class').html(get_table_classificacao());
 	$('#id_tbody_artilharia').html(get_table_artilharia());
 });
+
+
+
+/* =================================================================================
+======================== PATROCINADOR ==============================================
+==================================================================================*/
+function Patrocinador(){
+	var nome;     
+	var title;  
+	var imagem;     
+	var url;     
+	
+	this.getNome = function() {
+		return this.nome;
+	}; 
+	this.setNome = function(nome_){
+		this.nome = nome_;
+	};
+	this.getTitle = function() {
+		return this.title;
+	}; 
+	this.setTitle = function(title_){
+		this.nome = title_;
+	};		
+	this.getImagem = function() {
+		return this.imagem;
+	}; 
+	this.setImagem = function(imagem_){
+		this.imagem = imagem_;
+	};
+		this.getUrl = function() {
+		return this.url;
+	}; 
+	this.setUrl = function(url_){
+		this.url = url_;
+	};
+}
+
+function getAsisco() {
+	var patrocinador = new Patrocinador();
+	patrocinador.setNome('Asisco');
+	patrocinador.setTitle('Asisco - Alpha Sistemas e Consultoria');
+	patrocinador.setImagem('/media/images/patrocinadores/asisco.jpg');
+	patrocinador.setUrl('http://www.asisco.com.br');	
+	return patrocinador;
+}
+
+function getCafGlass() {
+	var patrocinador = new Patrocinador();
+	patrocinador.setNome('CafGlass');
+	patrocinador.setTitle('CafGlass');
+	patrocinador.setImagem('/media/images/patrocinadores/cafglass_150_altura.gif');
+	patrocinador.setUrl('http://www.cafglass.com.br');
+	return patrocinador;		
+}
+
+function getOldCity() {
+	var patrocinador = new Patrocinador();
+	patrocinador.setNome('Old City');
+	patrocinador.setTitle('Old City');
+	patrocinador.setImagem('/media/images/patrocinadores/oldcity.jpg');
+	patrocinador.setUrl('http://www.oldcity.com.br');	
+	return patrocinador;
+}
+
+function getVersatti() {
+	var patrocinador = new Patrocinador();
+	patrocinador.setNome('Versatti Multimarcas');
+	patrocinador.setTitle('Versatti Multimarcas');
+	patrocinador.setImagem('/media/images/patrocinadores/versatti_logo.png');
+	patrocinador.setUrl('http://www.versattimultimarcas.com.br');	
+	return patrocinador;
+}	
+
+var s = "";
+var qtde_total_patro = 4;
+function get_patrocinio() {
+	 
+	var n = Math.floor(Math.random() * qtde_total_patro);
+	do {
+		var n = Math.floor(Math.random() * qtde_total_patro);
+	} while (s.indexOf('[' + n + ']') > -1)	 // Enquanto não achar um novo nao sai do loop
+	
+	var patrocinador = new Patrocinador();
+	s = s + '[' + n + '];';
+	if (n == 0) { // 0 = Asisco | 1 = CafGlass | 2 = Old City | 3 = Versatti Multimarcas | 
+		patrocinador = getAsisco();
+	}
+	else if (n == 1) { 
+		patrocinador = getCafGlass();
+	}				
+	else if (n == 2) { 
+		patrocinador = getOldCity();
+	}				
+	else if (n == 3) { 
+		patrocinador = getVersatti();
+	}					
+	return patrocinador; 
+}
+/* =================================================================================
+======================== PATROCINADOR ==============================================
+==================================================================================*/
+
+
+
+
+
+
+
 
 
