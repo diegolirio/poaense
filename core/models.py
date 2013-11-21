@@ -6,8 +6,8 @@ class Time(models.Model):
 	nome = models.CharField(max_length=30)
 	
 class Status(models.Model):
-	codigo = models.CharField(max_length=1)# { F, A, E }
-	descricao = models.CharField(max_length=30, unique=True)	# {F:(finalizado), A: (em andamento, atualizando processo), E: (Edicao)}
+	codigo = models.CharField(max_length=1) # { F, A, E }
+	descricao = models.CharField(max_length=30, unique=True) # {F:(finalizado), A: (em andamento, atualizando processo), E: (Edicao)}
 	def __unicode__(self):
 		return "["+self.codigo+"] " + self.descricao	
 	
@@ -22,21 +22,22 @@ class Grupo(models.Model):
 
 class Jogo(models.Model):
 	grupo = models.ForeignKey(Grupo)
-	time_a = models.CharField(max_length=30)
-	time_b = models.CharField(max_length=30)
-	#time_a = models.ForeignKey(Time)
-	#time_b = models.ForeignKey(Time)	
+	time_a = models.ForeignKey(Time)
+	time_b = models.ForeignKey(Time)	
 	resultado_a = models.IntegerField(default=0)
 	resultado_b = models.IntegerField(default=0)
 	data_hora = models.DateTimeField(default=datetime.now)
 	vencedor = models.CharField(max_length=1, blank=True, default='E')
 	status = models.ForeignKey(Status, default='E') 
+	juiz = models.CharField(blank=True)
 	
-class GolsJogo(models.Model):
-	jogador = models.ForeignKey(Jogador)
-	quantidade_gols = models.IntegerField(default=0)
+class Escalacao(models.Model):
 	jogo = models.ForeignKey(Jogo)
+	jogador = models.ForeignKey(Jogador)
+	time = models.ForeignKey(time)
 	
+class Acao(models.Model):);;	
+	svfsdbv
 class Acessos(models.Model):
 	ip = models.CharField(max_length=50)
 	data_hora = models.DateTimeField(default=datetime.now)
