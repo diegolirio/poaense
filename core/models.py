@@ -29,15 +29,33 @@ class Jogo(models.Model):
 	data_hora = models.DateTimeField(default=datetime.now)
 	vencedor = models.CharField(max_length=1, blank=True, default='E')
 	status = models.ForeignKey(Status, default='E') 
-	juiz = models.CharField(blank=True)
+	juiz = models.CharField(max_length=50, blank=True)
 	
 class Escalacao(models.Model):
 	jogo = models.ForeignKey(Jogo)
 	jogador = models.ForeignKey(Jogador)
 	time = models.ForeignKey(time)
 	
-class Acao(models.Model):);;	
-	svfsdbv
+class Acao(models.Model):
+	codigo = models.CharField(max_length=3, blank=True)
+	descricao = models.CharField(max_length=50, blank=True)
+	
+class AcoesJogo(models.Model):
+	acao = models.ForeignKey(Acao)
+	escalacao = models.ForeignKey(Escalacao)
+	data_hota = models.DateTimeField(default=datetime.now)
+	
+class Classificacao(models.Model):
+	time = models.ForeignKey(Time)
+	campeonato = models.ForeignKey(Campeonato)
+	pontos = models.IntegerField(default=0)
+	jogos = models.IntegerField(default=0)
+	vitorias = models.IntegerField(default=0)
+	empates = models.IntegerField(default=0)
+	derrotas = models.IntegerField(default=0)
+	golsPro = models.IntegerField(default=0)
+	golsContra = models.IntegerField(default=0)
+	
 class Acessos(models.Model):
 	ip = models.CharField(max_length=50)
 	data_hora = models.DateTimeField(default=datetime.now)
