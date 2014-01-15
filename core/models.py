@@ -13,6 +13,7 @@ class Status(models.Model):
 	
 class Jogador(models.Model):
 	nome = models.CharField(max_length=30)
+	time = models.ForeignKey(Time, blank=True)
 	
 class Campeonato(models.Model):
 	nome = models.CharField(max_length=30)
